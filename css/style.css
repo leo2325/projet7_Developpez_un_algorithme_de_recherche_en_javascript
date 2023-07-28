@@ -1,0 +1,82 @@
+html {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+/*     HEADER     */
+
+header {
+    background: url("https://s3-alpha-sig.figma.com/img/f90e/7bb5/ff2950597c1f7f1fce40bd5b03a3d836?Expires=1691366400&Signature=GKfZja3Z6oEzIutVRRn-e4URZXTxz5z6BioMdVj1C6zvZFQCNqWAyINOgkPLDwtN06~7P~3ZfFfV5GLqucpWqr5Qsntv3efSLcItPm4peKr-cY1YpPA8PIJQonYJoVp326igfMi1CEvTX8HKw~coIOSPjhCpi5~yZXuMtZKa-itEMxhMuYtpijcnS8~qYwyejFCAfCVEsEc3PBz8yZa8lu9U-HcAhfUaKwmJRmyPg8dEXOstt~8YciZQ~eCpYtgNE7weIG05HRTAhYdd3ErA~ZFGu8gmZam63Fo6iXwAGkBJ10YeSPaVNnpJigasZ1NACFfMWpJk7nbQuBb6kBfYcQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+    background-size: 100%;
+    background-position: 0 -214px;
+    background-repeat: no-repeat;
+
+    max-width: 100%;
+    height: 667px;
+    flex-shrink: 0;
+}
+
+
+#logo_box {
+    width: 100%;
+}
+#logo_box img {
+    background-color: black;
+    width: 207px;
+    height: 25.261px;
+    flex-shrink: 0;
+
+    margin: 51px 0 0 69px; 
+}
+
+
+#slogan_box {
+    margin:  163px auto 0;
+    max-width: 700px;
+}
+#slogan_box h1 {
+    font-family: 'Anton', sans-serif;
+    
+    color: var(--yellow, #FFD15B);
+    text-align: center;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+    
+}
+
+
+#searchBar_box {
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    text-align: center;
+    border-radius: 5px;
+    width: 954px;
+    height: 72px;
+    background-color: white;
+    margin: 0 auto;
+}
+#searchBar_box input{
+    font-family: 'manrope', sans-serif;
+    
+    border-radius: 5px;
+    width: 880px;
+    height: 68px;
+    border: none;
+    padding-left: 50px;
+    font-size: 20px;
+    color: grey;
+}
+#searchBar_box input:focus{
+    outline-color: white;
+}
+#searchBar_box button {
+    background-color: white;
+    border: none;
+}

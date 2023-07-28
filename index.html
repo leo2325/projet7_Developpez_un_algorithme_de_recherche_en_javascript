@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Les Petits Plats - recettes de cuisine."> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> 
+    
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>Les petits plats</title>
+  </head>
+  
+  <body>
+   
+    <header>
+        <div id="logo_box">
+            <img src="/assets/svg/logo.svg" alt="Logo: Les petits plats.">
+        </div>
+        <div id="slogan_box">
+            <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
+        </div>
+        <div id="searchBar_box">
+        
+            <label for="site-search"></label>
+            <input type="search" id="site-search" name="site-search" value="Rechercher une recette, un ingrédient, ...">
+
+            <button><img src="/assets/svg/loupe.svg" alt="bouton de recherche."></button>
+
+        </div>
+    </header>
+    
+    <main>
+      <div class="recettes_section"></div>
+    </main>
+    
+    <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/pages/index.js"></script>
+    <script src="https://kit.fontawesome.com/6877221263.js"></script>
+  </body>
+
+</html>
