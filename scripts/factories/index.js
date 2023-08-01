@@ -1,8 +1,7 @@
 function recettesFactory(data) {
     const { id, image, name, servings, ingredients, time, description, appliance, ustensils } = data;
 
-    //const picture = `assets/photographers/${portrait}`;
-
+    const picture = `assets/photos_recettes/${image}`;
     // Fonction qui génère les fiches de présentation des recettes sur la page index
     function getRecettesCardDOM() {
 
@@ -18,9 +17,9 @@ function recettesFactory(data) {
                 imgElement.src = picture;
                 imgElement.setAttribute('alt', 'photo de' + name);
                 // Constante de temps = création de l'élément temps dans le DOM
-                const timeElement = document.createElement('');
-                timeElement.src = time;
-                timeElement.setAttribute('aria-label', 'temps de cuisson' + time);
+                const timeElement = document.createElement('p');
+                timeElement.innerText= time +'min';
+                timeElement.setAttribute('aria-label', 'temps de cuisson' + ' ' + time);
 
             // Constante titre de la recette = création de l'élément 'h2' dans le DOM
             const titleElement = document.createElement('h2');
@@ -36,21 +35,51 @@ function recettesFactory(data) {
                 const descriptionElement = document.createElement('p');
                 descriptionElement.innerText = description;
 
+
+
+
             // Constante de la div contenant les éléments du DOM relatifs aux ingrédients
             const ingredientsBox = document.createElement('div');
             ingredientsBox.setAttribute('class', 'ingredientsBox');
                 // ingredients title
                 const ingredientsTitle = document.createElement('h3');
                 ingredientsTitle.innerText = 'INGREDIENTS';
+                ingredientsBox.appendChild(ingredientsTitle);
+                
+                const ingredientsBoxElements = document.createElement('div');
+                ingredientsBoxElements.setAttribute('class', 'ingredientsBoxElements');
 
+                
+                // ingredients content
+                ingredients.forEach((ingredient) => {
+                    const ingredientsBoxElement = document.createElement('div');
+                    ingredientsBoxElement.setAttribute('class', 'ingredientsBoxElement');
+
+                    const ingredientNameElement = document.createElement('p');
+                    ingredientNameElement.setAttribute('class', 'ingredientNameElement');
+                    const { ingredient: ingredientName } = ingredient;
+                    ingredientNameElement.innerText = `${ingredientName} `;
+                    
+                    const ingredientElement = document.createElement('p');
+                    ingredientElement.setAttribute('class', 'ingredientElement');
+                    const { quantity: quantity, unit } = ingredient;
+                    ingredientElement.innerText = ` ${quantity} ${unit ? unit : ''}`;
+                    
+                    ingredientsBoxElement.appendChild(ingredientNameElement);
+                    ingredientsBoxElement.appendChild(ingredientElement);
+
+                    ingredientsBoxElements.appendChild(ingredientsBoxElement);
+                    ingredientsBox.appendChild(ingredientsBoxElements);
+                });
 
        
         
         
         // Création des éléments enfants de l'article
         article.appendChild(imgCardBox);
-        imgCardBox.appendChild(imgElement);
         imgCardBox.appendChild(timeElement);
+        imgCardBox.appendChild(imgElement);
+        
 
         article.appendChild(titleElement);
         
@@ -59,8 +88,7 @@ function recettesFactory(data) {
         descriptionBox.appendChild(descriptionElement);
 
         article.appendChild(ingredientsBox);
-        ingredientsBox.appendChild(ingredientsTitle);
-        descriptionBox.appendChild(descriptionElement);
+        
 
         return (article);
     }

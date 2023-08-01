@@ -80,3 +80,120 @@ header {
     background-color: white;
     border: none;
 }
+
+
+
+
+
+
+
+/* Articles de présentation des recettes */
+#recettes_section {
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    background-color: #EDEDED;
+}   
+    #recettes_section article{
+        width: 380px;
+        height: 731px;
+        border-radius: 21px;
+        margin: 30px auto;
+        background-color: white;
+    }
+        .imgCardBox {
+            Width: 380px;
+            Height: 253px;
+        }
+            .imgCardBox img {
+                    Width: 380px;
+                    Height: 253px;
+                    border-top-left-radius: 21px;
+                    border-top-right-radius: 21px;
+
+                    object-fit: cover;
+            }
+            /* patch temps de cuisson*/
+            .imgCardBox p{
+                position: absolute;
+                z-index: 995;
+                background-color: #FFD15B;
+
+                width: Hug (63px);
+                height: Hug (26px);
+                margin: 21px 0 0 285px;
+                padding: 5px 15px 5px 15px;
+                border-radius: 14px;
+                gap: 10px;
+
+            }
+
+
+            #recettes_section article h2 {
+                height: 27px;
+                margin: 30px auto 0;
+                font-family: 'Anton', sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+            #recettes_section article h2, .descriptionBox, .ingredientsBox {
+                width: 80%;
+            }
+            .descriptionBox, .ingredientsBox {
+                font-family: 'manrope', sans-serif;
+                text-align: left;
+                margin: 0 auto;
+            }
+            .descriptionBox h3, .ingredientsBox h3 {
+                width: 60px;
+                height: 16px;
+                color:#7A7A7A;
+                margin-top: 40px;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 0.1em;
+            }
+            .descriptionBox p{
+                font-weight: 200;
+                line-height: 19px;
+                letter-spacing: 0em;
+                font-size: 14px;
+                font-family: 'manrope', sans-serif;
+
+                width: 330px;
+                height: 76px;
+                overflow: hidden;
+                color: #1B1B1B;
+
+
+            }
+            .descriptionBox p, .ingredientsBoxElements{
+                margin-bottom: 0;
+            }
+            .ingredientsBoxElements{
+                width:100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 15px;
+                grid-auto-rows: minmax(10px, auto);
+                background-color: #ffffff;
+            }
+                .ingredientNameElement {
+                    height: 19px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #1B1B1B;
+                    margin-top: 0;
+                }
+                .ingredientElement {
+                    height: 19px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #7A7A7A;
+                    margin-top: -10px;
+                    margin-bottom: 0;
+                }
