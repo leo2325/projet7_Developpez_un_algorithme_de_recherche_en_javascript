@@ -36,8 +36,6 @@ function recettesFactory(data) {
                 descriptionElement.innerText = description;
 
 
-
-
             // Constante de la div contenant les éléments du DOM relatifs aux ingrédients
             const ingredientsBox = document.createElement('div');
             ingredientsBox.setAttribute('class', 'ingredientsBox');

@@ -2,21 +2,21 @@ html {
     max-width: 100%;
     margin: 0 auto;
 }
-
+body {
+    margin: 0;
+    background-color: #EDEDED;
+}
 
 /*     HEADER     */
-
 header {
+    background-color: #EDEDED;
     background: url("https://s3-alpha-sig.figma.com/img/f90e/7bb5/ff2950597c1f7f1fce40bd5b03a3d836?Expires=1691366400&Signature=GKfZja3Z6oEzIutVRRn-e4URZXTxz5z6BioMdVj1C6zvZFQCNqWAyINOgkPLDwtN06~7P~3ZfFfV5GLqucpWqr5Qsntv3efSLcItPm4peKr-cY1YpPA8PIJQonYJoVp326igfMi1CEvTX8HKw~coIOSPjhCpi5~yZXuMtZKa-itEMxhMuYtpijcnS8~qYwyejFCAfCVEsEc3PBz8yZa8lu9U-HcAhfUaKwmJRmyPg8dEXOstt~8YciZQ~eCpYtgNE7weIG05HRTAhYdd3ErA~ZFGu8gmZam63Fo6iXwAGkBJ10YeSPaVNnpJigasZ1NACFfMWpJk7nbQuBb6kBfYcQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
     background-size: 100%;
     background-position: 0 -214px;
     background-repeat: no-repeat;
-
     max-width: 100%;
     height: 667px;
-    flex-shrink: 0;
 }
-
 
 #logo_box {
     width: 100%;
@@ -26,10 +26,8 @@ header {
     width: 207px;
     height: 25.261px;
     flex-shrink: 0;
-
     margin: 51px 0 0 69px; 
 }
-
 
 #slogan_box {
     margin:  163px auto 0;
@@ -37,15 +35,12 @@ header {
 }
 #slogan_box h1 {
     font-family: 'Anton', sans-serif;
-    
     color: var(--yellow, #FFD15B);
     text-align: center;
     font-size: 44px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    
-    
+    line-height: normal;  
 }
 
 
@@ -54,7 +49,6 @@ header {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-
     text-align: center;
     border-radius: 5px;
     width: 954px;
@@ -64,7 +58,6 @@ header {
 }
 #searchBar_box input{
     font-family: 'manrope', sans-serif;
-    
     border-radius: 5px;
     width: 880px;
     height: 68px;
@@ -86,7 +79,6 @@ header {
 
 
 
-
 /* Articles de présentation des recettes */
 #recettes_section {
     width:100%;
@@ -94,7 +86,6 @@ header {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
-    background-color: #EDEDED;
 }   
     #recettes_section article{
         width: 380px;
@@ -112,7 +103,6 @@ header {
                     Height: 253px;
                     border-top-left-radius: 21px;
                     border-top-right-radius: 21px;
-
                     object-fit: cover;
             }
             /* patch temps de cuisson*/
@@ -120,16 +110,13 @@ header {
                 position: absolute;
                 z-index: 995;
                 background-color: #FFD15B;
-
                 width: Hug (63px);
                 height: Hug (26px);
                 margin: 21px 0 0 285px;
                 padding: 5px 15px 5px 15px;
                 border-radius: 14px;
                 gap: 10px;
-
             }
-
 
             #recettes_section article h2 {
                 height: 27px;
@@ -163,13 +150,10 @@ header {
                 letter-spacing: 0em;
                 font-size: 14px;
                 font-family: 'manrope', sans-serif;
-
                 width: 330px;
                 height: 76px;
                 overflow: hidden;
                 color: #1B1B1B;
-
-
             }
             .descriptionBox p, .ingredientsBoxElements{
                 margin-bottom: 0;
@@ -197,3 +181,117 @@ header {
                     margin-top: -10px;
                     margin-bottom: 0;
                 }
+
+
+                
+/**/
+#searchListBarAndTotalResults_box {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+
+/* Classe */
+.visible {
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+}
+.rotated {
+    transform: rotate(180deg);
+}
+
+
+
+/* <div> contenant toutes les barres de recherches secondaires */
+#searchListBar_box {
+    display: flex;
+    flex-direction: row;
+    font-family: 'manrope', sans-serif;
+} 
+#searchListBar_box>ul {
+    margin-left: 36px;
+    margin-right: 60px;
+    background-color: #ffffff;
+    cursor: pointer;
+    border-radius: 11px;
+    padding-left: 0;
+}
+#searchListBar_box>ul>li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 178px;
+    height: 26px;
+}
+
+.searchBarTitle {
+    padding: 17px 16px 17px 16px;
+}
+
+/*  Les barres de recherches secondaires*/
+/* élément de liste <li> */
+.searchBarSpecific_box {
+    padding: 8px 16px 17px 16px;
+}
+
+.specificSearch_box {
+    border: 1px solid #c6c6c6;
+    width: 200px; 
+}
+.specificSearch_box input {
+    border: none;
+    height: 36px;
+}
+.specificSearch_box i{
+    color: #7a7a7a;
+}
+
+
+/* liste contenant ingrédients, appareils ou ustensiles */
+.SearchListElement_box {
+    text-align: left;
+    list-style: none;
+    font-size: 15px;
+    padding-left: 10px;
+    font-weight: 100;
+    width: 119px;
+    max-height: 202px;
+    overflow: hidden;
+}
+/* Elements de listes */
+.SearchListElement_box li {
+    width: 178px;
+    padding: 7px;
+}
+
+
+
+
+
+/* Classe */
+.visible {
+    visibility: hidden;
+    height: 0;
+}
+.rotated {
+    transform: rotate(180deg);
+}
+
+
+
+
+
+/* */
+#totalResults_box {
+    width: 155px;
+    font-family: "Anton";
+    font-size: 21px;
+    text-align: left;
+}
+    
