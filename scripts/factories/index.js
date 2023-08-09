@@ -8,6 +8,7 @@ function recettesFactory(data) {
         // Création de la constante article (Articles qui contiennent les fiches de présentation des recettes).
         const article = document.createElement('article');
         article.setAttribute('aria-label', 'fiche de recette' + name);
+        article.setAttribute('class', 'ficheRecetteArticle');
         
             // Constante de la div contenant les éléments du DOM de présentation image
             const imgCardBox = document.createElement('div');

@@ -12,6 +12,10 @@ const ingredientsListDownIcon = document.getElementById('ingredientsListDownIcon
 const appareilsListDownIcon = document.getElementById('appareilsListDownIcon');
 const ustensilesListDownIcon = document.getElementById('ustensilesListDownIcon');
 
+const ingredientsSearchList =document.getElementById('appareilsSearchList');
+const appareilsSearchList =document.getElementById('appareilsSearchList');
+const ustensilesSearchList =document.getElementById('appareilsSearchList');
+
 let menuVisible = false;
 
 /* Fonction dérouler la sortList */
@@ -27,7 +31,8 @@ function launchSearchSpecific(event) {
         appareilsSearchBar.classList.toggle('visible');
         appareilsSearchListElement_box.classList.toggle('visible');
         appareilsListDownIcon.classList.toggle('rotated');
-    } else if ( clickedIcon === ustensilesListDownIcon ) {
+    } 
+    else if ( clickedIcon === ustensilesListDownIcon ) {
         ustensilesSearchBar.classList.toggle('visible');
         ustensilesSearchListElement_box.classList.toggle('visible');
         ustensilesListDownIcon.classList.toggle('rotated');

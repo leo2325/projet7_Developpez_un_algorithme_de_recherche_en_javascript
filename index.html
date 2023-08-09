@@ -25,7 +25,7 @@
         <div id="searchBar_box">
             <label for="site-search"></label>
             <input type="search" id="site-search" name="site-search" value="Rechercher une recette, un ingrédient, ...">
-            <button><img src="/assets/svg/loupe.svg" alt="bouton de recherche."></button>
+            <button id="searchBtn"><img src="/assets/svg/loupe.svg" alt="bouton de recherche."></button>
         </div>
     </header>
     
@@ -49,7 +49,7 @@
             <ul class="SearchListElement_box visible" id="ingredientsSearchListElement_box"></ul>
           </ul>
           
-          <ul id="appareilsSearchList">
+          <ul class="disappear" id="appareilsSearchList">
             <li class="searchBarTitle" id="appareilsTitle">
               <p>Appareils</p>
               <span class="fa-solid fa-chevron-down" id="appareilsListDownIcon" aria-label="dérouler la liste"></span>
@@ -97,6 +97,7 @@
     <script src="./data/recipes.js"></script>
     <script src="scripts/factories/index.js"></script>
     <script src="scripts/pages/index.js"></script>
+    <script src="scripts/searchBar/searchbarPrincipal.js"></script>
     <script src="scripts/utils/searchBarSpecific.js"></script>
     <script src="https://kit.fontawesome.com/6877221263.js"></script>
   </body>

@@ -196,14 +196,11 @@ header {
 
 /* Classe */
 .visible {
-    visibility: hidden;
-    height: 0;
-    padding: 0;
+    display: none !important;
 }
 .rotated {
     transform: rotate(180deg);
 }
-
 
 
 /* <div> contenant toutes les barres de recherches secondaires */

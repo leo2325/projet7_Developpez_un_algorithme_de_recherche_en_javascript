@@ -8,14 +8,14 @@ async function getRecettes() {
         console.error('Erreur lors de la récupération des recettes:', error);
         return []; 
     }
-}
+} 
 
 // Fonction asynchrone d'affichage des recettes
 async function displayData(recipes) {
     try {
         const recettesSection = document.querySelector("#recettes_section");
 
-        // Constantes éléments HTML <ul>, qui acceuillent les éléments de liste des recherches secondaire
+        // Constantes éléments HTML <ul>, qui acceuillent les éléments de liste des recherches tag
         const ingredientsListElementBox = document.querySelector("#ingredientsSearchListElement_box");
         const appareilsListElementBox = document.querySelector("#appareilsSearchListElement_box");
         const ustensilesListElementBox = document.querySelector("#ustensilesSearchListElement_box");
@@ -23,6 +23,7 @@ async function displayData(recipes) {
         recipes.forEach((recipe) => {
             const recettesModel = recettesFactory(recipe);
             const recettesCardDOM = recettesModel.getRecettesCardDOM();
+            
             recettesSection.appendChild(recettesCardDOM);
 
             // Affichage des ingrédients
