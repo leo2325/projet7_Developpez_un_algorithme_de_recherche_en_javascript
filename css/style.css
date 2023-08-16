@@ -258,7 +258,7 @@ header {
     padding-left: 10px;
     font-weight: 100;
     width: 119px;
-    max-height: 202px;
+    /*max-height: 202px;*/
     overflow: hidden;
 }
 /* Elements de listes */
