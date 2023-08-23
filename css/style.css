@@ -1,3 +1,7 @@
+.searchActive {
+    height: auto !important;
+}
+
 html {
     max-width: 100%;
     margin: 0 auto;
@@ -216,6 +220,7 @@ header {
     cursor: pointer;
     border-radius: 11px;
     padding-left: 0;
+    height: 60px;
 }
 #searchListBar_box>ul>li {
     display: flex;
@@ -257,9 +262,11 @@ header {
     font-size: 15px;
     padding-left: 10px;
     font-weight: 100;
-    width: 119px;
-    /*max-height: 202px;*/
+    max-height: 202px;
+    width: 202px;
     overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
 /* Elements de listes */
 .SearchListElement_box li {
@@ -292,3 +299,48 @@ header {
     text-align: left;
 }
     
+
+
+
+
+
+
+
+
+
+
+#tags_section {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+.tag_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 178px;
+    height: 26px;
+    padding: 17px 18px 17px 18px;
+    border-radius: 10px;
+    background-color: #FFD15B;
+}
+
+.tag_container span{
+    padding: 17px 18px 17px 18px;
+    cursor: pointer;
+}
+
+
+
+/* class ajouté à l'élément de liste secondaire cliquée */
+.listElementSelected {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: #FFD15B;
+    height: 26px;
+    margin: 0 0 20px;
+}
+

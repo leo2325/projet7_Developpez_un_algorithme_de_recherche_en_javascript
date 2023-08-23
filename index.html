@@ -9,12 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    
     <title>Les petits plats</title>
   </head>
   
   <body>
-   
+
     <header>
         <div id="logo_box">
             <img src="/assets/svg/logo.svg" alt="Logo: Les petits plats.">
@@ -30,15 +29,18 @@
     </header>
     
     <main>
-      <div id="searchListBarAndTotalResults_box">
 
+      <div id="searchListBarAndTotalResults_box">
         <div id="searchListBar_box">
-          
+
+          <!-- Conteneur de recherche avancées des ingrédients -->
           <ul id="ingredientsSearchList"> 
+            <!--  -->
             <li class="searchBarTitle" id="ingredientsTitle">
               <p>Ingrédients</p>
               <span class="fa-solid fa-chevron-down" id="ingredientsListDownIcon" aria-label="dérouler la liste"></span>
             </li>
+            <!-- Input de recherche ingrédients -->
             <li class="searchBarSpecific_box visible" id="ingredientsSearchBar">
               <div class="specificSearch_box">
                 <label for="inputIngredientsSearch"></label>
@@ -46,14 +48,18 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </li>
+            <!-- Liste des ingrédients -->
             <ul class="SearchListElement_box visible" id="ingredientsSearchListElement_box"></ul>
           </ul>
-          
-          <ul class="disappear" id="appareilsSearchList">
+
+          <!-- Conteneur de recherche avancées des appareils -->
+          <ul id="appareilsSearchList">
+            <!--  -->
             <li class="searchBarTitle" id="appareilsTitle">
               <p>Appareils</p>
               <span class="fa-solid fa-chevron-down" id="appareilsListDownIcon" aria-label="dérouler la liste"></span>
             </li>
+            <!-- Input de recherche appareils -->
             <li class="searchBarSpecific_box visible" id="appareilsSearchBar">
               <div class="specificSearch_box">
                 <label for="inputAppareilsSearch"></label>
@@ -61,16 +67,18 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </li>
-             
+            <!-- Liste des appareils -->
             <ul class="SearchListElement_box visible" id="appareilsSearchListElement_box"></ul>
           </ul>
-          
+
+          <!-- Conteneur de recherche avancées des ustensiles -->
           <ul id="ustensilesSearchList">
+            <!-- Input de recherche appareils -->
             <li class="searchBarTitle" id="ustensilesTitle">
               <p>Ustensiles</p>
               <span class="fa-solid fa-chevron-down" id="ustensilesListDownIcon" aria-label="dérouler la liste"></span>
             </li>
-
+            <!-- Input de recherche ustensiles -->
             <li class="searchBarSpecific_box visible" id="ustensilesSearchBar">
               <div class="specificSearch_box">
                 <label for="inputUstensilesSearch"></label>
@@ -78,18 +86,25 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </div>
             </li>
-
+            <!-- Liste des ustensiles -->
             <ul class="SearchListElement_box visible" id="ustensilesSearchListElement_box"></ul>
-            
+          
           </ul>
         </div>
 
+        <!-- Total de recettes affichées -->
         <div id="totalResults_box">
-          <p>1500 recettes</p>
+          <p id="recipesCount"></p>
         </div>
-      
+
       </div>
 
+      <!-- conteneur tags -->
+      <div id="tags_section">
+        
+      </div>
+
+      <!-- conteneur recettes -->
       <div id="recettes_section"></div>
     
     </main>
@@ -97,8 +112,9 @@
     <script src="./data/recipes.js"></script>
     <script src="scripts/factories/index.js"></script>
     <script src="scripts/factories/searchBar.js"></script>
+    <script src="scripts/factories/tags.js"></script>
     <script src="scripts/pages/index.js"></script>
-    <script src="scripts/utils/searchBarSpecific.js"></script>
+    <script src="scripts/pages/searchBarSpecifics.js"></script>
     <script src="https://kit.fontawesome.com/6877221263.js"></script>
   </body>
 

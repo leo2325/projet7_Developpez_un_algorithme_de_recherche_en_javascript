@@ -1,5 +1,5 @@
 // Fonction asynchrone de récupération des données depuis le fichier data recipes.js
-async function getRecettes() {
+async function getAllRecettes() {
     try {
         // Retourner directement les données du fichier data recipes.js
         return window.recipes;
@@ -69,11 +69,11 @@ async function displayData(recipes) {
     }
 }
 
-// fonction d'initialisation appelant getRecettes() puis displaydata().
+// fonction d'initialisation appelant getAllRecettes() puis displaydata().
 async function init() {
     try {
         // Récupère les datas des recettes
-        const recipes = await getRecettes();
+        const recipes = await getAllRecettes();
         displayData(recipes);
     } catch (error) {
         console.error('Erreur lors de l\'initialisation:', error);
