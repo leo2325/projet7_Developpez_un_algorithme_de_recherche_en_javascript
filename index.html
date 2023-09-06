@@ -1,121 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Les Petits Plats - recettes de cuisine."> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"> 
-    
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <title>Les petits plats</title>
-  </head>
-  
-  <body>
 
-    <header>
-        <div id="logo_box">
-            <img src="/assets/svg/logo.svg" alt="Logo: Les petits plats.">
-        </div>
-        <div id="slogan_box">
-            <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
-        </div>
-        <div id="searchBar_box">
-            <label for="site-search"></label>
-            <input type="search" id="site-search" name="site-search" value="Rechercher une recette, un ingrédient, ...">
-            <button id="searchBtn"><img src="/assets/svg/loupe.svg" alt="bouton de recherche."></button>
-        </div>
-    </header>
-    
-    <main>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Les Petits Plats - recettes de cuisine.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-      <div id="searchListBarAndTotalResults_box">
-        <div id="searchListBar_box">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <title>Les petits plats</title>
+</head>
 
-          <!-- Conteneur de recherche avancées des ingrédients -->
-          <ul id="ingredientsSearchList"> 
-            <!--  -->
-            <li class="searchBarTitle" id="ingredientsTitle">
-              <p>Ingrédients</p>
-              <span class="fa-solid fa-chevron-down" id="ingredientsListDownIcon" aria-label="dérouler la liste"></span>
-            </li>
-            <!-- Input de recherche ingrédients -->
-            <li class="searchBarSpecific_box visible" id="ingredientsSearchBar">
-              <div class="specificSearch_box">
-                <label for="inputIngredientsSearch"></label>
-                <input type="search" id="inputIngredientsSearch" name="inputIngredientsSearch"/>
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
-            </li>
-            <!-- Liste des ingrédients -->
-            <ul class="SearchListElement_box visible" id="ingredientsSearchListElement_box"></ul>
-          </ul>
+<body>
 
-          <!-- Conteneur de recherche avancées des appareils -->
-          <ul id="appareilsSearchList">
-            <!--  -->
-            <li class="searchBarTitle" id="appareilsTitle">
-              <p>Appareils</p>
-              <span class="fa-solid fa-chevron-down" id="appareilsListDownIcon" aria-label="dérouler la liste"></span>
-            </li>
-            <!-- Input de recherche appareils -->
-            <li class="searchBarSpecific_box visible" id="appareilsSearchBar">
-              <div class="specificSearch_box">
-                <label for="inputAppareilsSearch"></label>
-                <input type="search" id="inputAppareilsSearch" name="inputAppareilsSearch"/>
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
-            </li>
-            <!-- Liste des appareils -->
-            <ul class="SearchListElement_box visible" id="appareilsSearchListElement_box"></ul>
-          </ul>
+  <header>
+    <div id="logo_box">
+      <img src="/assets/svg/logo.svg" alt="Logo: Les petits plats.">
+    </div>
+    <div id="slogan_box">
+      <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
+    </div>
+    <div id="searchBar_box">
+      <label for="site-search"></label>
+      <input type="search" id="site-search" name="site-search" placeholder="Rechercher une recette, un ingrédient, ...">
+      <button id="searchBtn"><img src="/assets/svg/loupe.svg" alt="bouton de recherche."></button>
+    </div>
+  </header>
 
-          <!-- Conteneur de recherche avancées des ustensiles -->
-          <ul id="ustensilesSearchList">
-            <!-- Input de recherche appareils -->
-            <li class="searchBarTitle" id="ustensilesTitle">
-              <p>Ustensiles</p>
-              <span class="fa-solid fa-chevron-down" id="ustensilesListDownIcon" aria-label="dérouler la liste"></span>
-            </li>
-            <!-- Input de recherche ustensiles -->
-            <li class="searchBarSpecific_box visible" id="ustensilesSearchBar">
-              <div class="specificSearch_box">
-                <label for="inputUstensilesSearch"></label>
-                <input type="search" id="inputUstensilesSearch" name="inputUstensilesSearch"/>
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </div>
-            </li>
-            <!-- Liste des ustensiles -->
-            <ul class="SearchListElement_box visible" id="ustensilesSearchListElement_box"></ul>
-          
-          </ul>
-        </div>
+  <main>
 
-        <!-- Total de recettes affichées -->
-        <div id="totalResults_box">
-          <p id="recipesCount"></p>
-        </div>
+    <div id="searchListBarAndTotalResults_box">
+      <div id="searchListBar_box">
 
+        <!-- Conteneur de recherche avancées des ingrédients -->
+        <ul id="ingredientsSearchList">
+          <!--  -->
+          <li class="searchBarTitle" id="ingredientsTitle">
+            <p>Ingrédients</p>
+            <span class="fa-solid fa-chevron-down" id="ingredientsListDownIcon" aria-label="dérouler la liste"></span>
+          </li>
+          <!-- Input de recherche ingrédients -->
+          <li class="searchBarSpecific_box visible" id="ingredientsSearchBar">
+            <div class="specificSearch_box">
+              <label for="inputIngredientsSearch"></label>
+              <input type="search" id="inputIngredientsSearch" name="inputIngredientsSearch" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <!-- Liste des ingrédients -->
+          <ul class="SearchListElement_box visible" id="ingredientsSearchListElement_box"></ul>
+        </ul>
+
+        <!-- Conteneur de recherche avancées des appareils -->
+        <ul id="appareilsSearchList">
+          <!--  -->
+          <li class="searchBarTitle" id="appareilsTitle">
+            <p>Appareils</p>
+            <span class="fa-solid fa-chevron-down" id="appareilsListDownIcon" aria-label="dérouler la liste"></span>
+          </li>
+          <!-- Input de recherche appareils -->
+          <li class="searchBarSpecific_box visible" id="appareilsSearchBar">
+            <div class="specificSearch_box">
+              <label for="inputAppareilsSearch"></label>
+              <input type="search" id="inputAppareilsSearch" name="inputAppareilsSearch" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <!-- Liste des appareils -->
+          <ul class="SearchListElement_box visible" id="appareilsSearchListElement_box"></ul>
+        </ul>
+
+        <!-- Conteneur de recherche avancées des ustensiles -->
+        <ul id="ustensilesSearchList">
+          <!-- Input de recherche appareils -->
+          <li class="searchBarTitle" id="ustensilesTitle">
+            <p>Ustensiles</p>
+            <span class="fa-solid fa-chevron-down" id="ustensilesListDownIcon" aria-label="dérouler la liste"></span>
+          </li>
+          <!-- Input de recherche ustensiles -->
+          <li class="searchBarSpecific_box visible" id="ustensilesSearchBar">
+            <div class="specificSearch_box">
+              <label for="inputUstensilesSearch"></label>
+              <input type="search" id="inputUstensilesSearch" name="inputUstensilesSearch" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </li>
+          <!-- Liste des ustensiles -->
+          <ul class="SearchListElement_box visible" id="ustensilesSearchListElement_box"></ul>
+
+        </ul>
       </div>
 
-      <!-- conteneur tags -->
-      <div id="tags_section">
-        
+      <!-- Total de recettes affichées -->
+      <div id="totalResults_box">
+        <p id="recipesCount"></p>
       </div>
 
-      <!-- conteneur recettes -->
-      <div id="recettes_section"></div>
-    
-    </main>
+    </div>
 
-    <script src="./data/recipes.js"></script>
-    <script src="scripts/factories/index.js"></script>
-    <script src="scripts/factories/searchBar.js"></script>
-    <script src="scripts/factories/tags.js"></script>
-    <script src="scripts/pages/index.js"></script>
-    <script src="scripts/pages/searchBarSpecifics.js"></script>
-    <script src="https://kit.fontawesome.com/6877221263.js"></script>
-  </body>
+    <!-- conteneur tags -->
+    <div id="tags_section">
+
+    </div>
+
+    <!-- conteneur recettes -->
+    <div id="recettes_section"></div>
+
+  </main>
+
+  <script src="./data/recipes.js"></script>
+  <script src="scripts/factories/index.js"></script>
+  <script src="scripts/factories/searchBar.js"></script>
+  <script src="scripts/factories/tags.js"></script>
+  <script src="scripts/pages/index.js"></script>
+  <script src="scripts/pages/searchBarSpecifics.js"></script>
+  <script src="https://kit.fontawesome.com/6877221263.js"></script>
+</body>
 
 </html>
