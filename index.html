@@ -23,9 +23,17 @@
       <h1>Cherchez parmi plus de 1500 recettes du quotidien, simples et délicieuses</h1>
     </div>
     <div id="searchBar_box">
-      <label for="site-search"></label>
-      <input type="search" id="site-search" name="site-search" placeholder="Rechercher une recette, un ingrédient, ...">
-      <button id="searchBtn"><img src="/assets/svg/loupe.svg" alt="bouton de recherche."></button>
+      <label for="site-search">Recherche principale</label>
+      <input  type="search" 
+              id="site-search" 
+              name="site-search" 
+              placeholder="Rechercher une recette, un ingrédient, ..."
+              minlength="3"
+              maxlength="25"
+
+      >
+      
+              <button id="searchBtn"><img src="/assets/svg/loupe.svg" alt="bouton de recherche."></button>
     </div>
   </header>
 
@@ -44,9 +52,9 @@
           <!-- Input de recherche ingrédients -->
           <li class="searchBarSpecific_box visible" id="ingredientsSearchBar">
             <div class="specificSearch_box">
-              <label for="inputIngredientsSearch"></label>
+              <label for="inputIngredientsSearch">Recherche ingrédients</label>
               <input type="search" id="inputIngredientsSearch" name="inputIngredientsSearch" />
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <span class="fa-solid fa-magnifying-glass"></span>
             </div>
           </li>
           <!-- Liste des ingrédients -->
@@ -63,9 +71,9 @@
           <!-- Input de recherche appareils -->
           <li class="searchBarSpecific_box visible" id="appareilsSearchBar">
             <div class="specificSearch_box">
-              <label for="inputAppareilsSearch"></label>
+              <label for="inputAppareilsSearch">Recherche appareils</label>
               <input type="search" id="inputAppareilsSearch" name="inputAppareilsSearch" />
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <span class="fa-solid fa-magnifying-glass"></span>
             </div>
           </li>
           <!-- Liste des appareils -->
@@ -82,9 +90,9 @@
           <!-- Input de recherche ustensiles -->
           <li class="searchBarSpecific_box visible" id="ustensilesSearchBar">
             <div class="specificSearch_box">
-              <label for="inputUstensilesSearch"></label>
+              <label for="inputUstensilesSearch"> Recherche ustensiles</label>
               <input type="search" id="inputUstensilesSearch" name="inputUstensilesSearch" />
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <span class="fa-solid fa-magnifying-glass"></span>
             </div>
           </li>
           <!-- Liste des ustensiles -->

@@ -1,7 +1,10 @@
 .searchActive {
     height: auto !important;
 }
-
+label {
+    display: none;
+    
+}
 html {
     max-width: 100%;
     margin: 0 auto;
