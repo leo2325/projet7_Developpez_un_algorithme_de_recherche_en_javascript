@@ -19,10 +19,10 @@ header {
     background-color: #EDEDED;
     background: url(../assets/utils/background.png);
     background-size: 100%;
-    background-position: 0 -214px;
+    background-position: 0 5px;
     background-repeat: no-repeat;
     max-width: 100%;
-    height: 667px;
+    height: 880px;
 }
 
 #logo_box {
