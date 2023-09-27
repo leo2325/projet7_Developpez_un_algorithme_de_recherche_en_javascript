@@ -246,15 +246,20 @@ header {
 }
 
 .specificSearch_box {
+    display: flex;
+    align-items: center;
     border: 1px solid #c6c6c6;
+    height: 36px;
     width: 200px; 
 }
 .specificSearch_box input {
     border: none;
-    height: 36px;
+    height: 18px;
+    width: 100%;
 }
-.specificSearch_box i{
+.specificSearch_box span{
     color: #7a7a7a;
+    padding-right: 5px;
 }
 
 
