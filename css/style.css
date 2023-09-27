@@ -17,7 +17,7 @@ body {
 /*     HEADER     */
 header {
     background-color: #EDEDED;
-    background: url("https://s3-alpha-sig.figma.com/img/f90e/7bb5/ff2950597c1f7f1fce40bd5b03a3d836?Expires=1691366400&Signature=GKfZja3Z6oEzIutVRRn-e4URZXTxz5z6BioMdVj1C6zvZFQCNqWAyINOgkPLDwtN06~7P~3ZfFfV5GLqucpWqr5Qsntv3efSLcItPm4peKr-cY1YpPA8PIJQonYJoVp326igfMi1CEvTX8HKw~coIOSPjhCpi5~yZXuMtZKa-itEMxhMuYtpijcnS8~qYwyejFCAfCVEsEc3PBz8yZa8lu9U-HcAhfUaKwmJRmyPg8dEXOstt~8YciZQ~eCpYtgNE7weIG05HRTAhYdd3ErA~ZFGu8gmZam63Fo6iXwAGkBJ10YeSPaVNnpJigasZ1NACFfMWpJk7nbQuBb6kBfYcQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4");
+    background: url(../assets/utils/background.png);
     background-size: 100%;
     background-position: 0 -214px;
     background-repeat: no-repeat;
