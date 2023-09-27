@@ -244,7 +244,7 @@ function search (text, tags) {
     recettesSection.innerHTML =
             '<p id="noMatchingRecipes">  Aucune recette ne contient \'' + searchText + '\' vous pouvez chercher "tarte aux pommes", "poisson", etc.  </p>'
   } else {
-    // Utilise la méthode reduce pour générer le contenu HTML des recettes filtrées
+    // générer le contenu HTML des recettes filtrées
     let filteredRecipesHTML = ''
     for (let i = 0; i < filteredRecipes.length; i++) {
       filteredRecipesHTML += recettesFactory(filteredRecipes[i]).getRecettesCardDOM().outerHTML
