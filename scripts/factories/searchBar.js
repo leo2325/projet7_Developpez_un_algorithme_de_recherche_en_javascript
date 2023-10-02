@@ -61,7 +61,6 @@ function createTagFromClick (event) {
     /* global tagFactory */
     /* eslint no-undef: "error" */
     const newTag = tagFactory({ appliance: tagText }).getTagsDOM(tagText, () => removeTag(tagText))
-
     tagsSection.appendChild(newTag)
     // Ajouter l'icône de fermeture à l'élément cliqué
     const closeIcon = document.createElement('span')
@@ -141,86 +140,22 @@ function search (text, tags) {
     for (let i = 0; i < window.recipes.length; i++) {
       const recipe = window.recipes[i]
       if (
-      // par titre
+        // par titre
         recipe.name.toLowerCase().includes(searchText) ||
-                // par description
-                recipe.description.toLowerCase().includes(searchText) ||
-                // par ingrédient
-                recipe.ingredients.some(function (ingredient) {
-                  return ingredient.ingredient.toLowerCase().includes(searchText)
-                })
+        // par description
+        recipe.description.toLowerCase().includes(searchText) ||
+        // par ingrédient
+        recipe.ingredients.some(function (ingredient) {
+          return ingredient.ingredient.toLowerCase().includes(searchText)
+        })
       ) {
         filteredRecipes.push(recipe)
       }
     }
-
-    // Mettre à jour les listes avec les éléments correspondant aux résultats de recherche
-    for (let i = 0; i < filteredRecipes.length; i++) {
-      const recipe = filteredRecipes[i]
-      for (let j = 0; j < recipe.ingredients.length; j++) {
-        const ingredientName = recipe.ingredients[j].ingredient
-        if (!ingredientsListElementBox.querySelector(`[data-ingredient="${ingredientName}"]`)) {
-          const ingredientElement = document.createElement('div')
-          ingredientElement.dataset.ingredient = ingredientName
-          ingredientElement.textContent = ingredientName
-          ingredientsListElementBox.appendChild(ingredientElement)
-        }
-      }
-
-      const applianceName = recipe.appliance
-      if (!appareilsListElementBox.querySelector(`[data-appliance="${applianceName}"]`)) {
-        const applianceElement = document.createElement('div')
-        applianceElement.dataset.appliance = applianceName
-        applianceElement.textContent = applianceName
-        appareilsListElementBox.appendChild(applianceElement)
-      }
-
-      for (let j = 0; j < recipe.ustensils.length; j++) {
-        const ustensil = recipe.ustensils[j]
-        if (!ustensilesListElementBox.querySelector(`[data-ustensil="${ustensil}"]`)) {
-          const ustensilElement = document.createElement('div')
-          ustensilElement.dataset.ustensil = ustensil
-          ustensilElement.textContent = ustensil
-          ustensilesListElementBox.appendChild(ustensilElement)
-        }
-      }
-    }
   } else {
-  // Si la longueur du texte entré par l'utilisateur est inférieure à 3 caractères
+    // Si la longueur du texte entré par l'utilisateur est inférieure à 3 caractères
     // Afficher à nouveau toutes les fiches de recettes
     displayAllRecipes()
-
-    // Remettre à jour les listes avec tous les ingrédients, ustensiles et appareils
-    for (let i = 0; i < window.recipes.length; i++) {
-      const recipe = window.recipes[i]
-      for (let j = 0; j < recipe.ingredients.length; j++) {
-        const ingredientName = recipe.ingredients[j].ingredient
-        if (!ingredientsListElementBox.querySelector(`[data-ingredient="${ingredientName}"]`)) {
-          const ingredientElement = document.createElement('div')
-          ingredientElement.dataset.ingredient = ingredientName
-          ingredientElement.textContent = ingredientName
-          ingredientsListElementBox.appendChild(ingredientElement)
-        }
-      }
-
-      const applianceName = recipe.appliance
-      if (!appareilsListElementBox.querySelector(`[data-appliance="${applianceName}"]`)) {
-        const applianceElement = document.createElement('div')
-        applianceElement.dataset.appliance = applianceName
-        applianceElement.textContent = applianceName
-        appareilsListElementBox.appendChild(applianceElement)
-      }
-
-      for (let j = 0; j < recipe.ustensils.length; j++) {
-        const ustensil = recipe.ustensils[j]
-        if (!ustensilesListElementBox.querySelector(`[data-ustensil="${ustensil}"]`)) {
-          const ustensilElement = document.createElement('div')
-          ustensilElement.dataset.ustensil = ustensil
-          ustensilElement.textContent = ustensil
-          ustensilesListElementBox.appendChild(ustensilElement)
-        }
-      }
-    }
   }
 
   filteredRecipes = (filteredRecipes.length > 0 || searchText.length >= 3 ? filteredRecipes : window.recipes).filter(function (recipe) {
@@ -228,21 +163,24 @@ function search (text, tags) {
     // s'assure que tous les tags actifs correspondent à au moins un critère dans la recette.
     return tags.every(function (tag) {
       return recipe.name.toLowerCase().includes(tag.toLowerCase()) ||
-                recipe.description.toLowerCase().includes(tag.toLowerCase()) ||
-                recipe.ingredients.some(function (ingredient) {
-                  return ingredient.ingredient.toLowerCase().includes(tag.toLowerCase())
-                }) ||
-                recipe.appliance.toLowerCase().includes(tag.toLowerCase()) ||
-                recipe.ustensils.some(function (ustensil) {
-                  return ustensil.toLowerCase().includes(tag.toLowerCase())
-                })
+        recipe.description.toLowerCase().includes(tag.toLowerCase()) ||
+        recipe.ingredients.some(function (ingredient) {
+          return ingredient.ingredient.toLowerCase().includes(tag.toLowerCase())
+        }) ||
+        recipe.appliance.toLowerCase().includes(tag.toLowerCase()) ||
+        recipe.ustensils.some(function (ustensil) {
+          return ustensil.toLowerCase().includes(tag.toLowerCase())
+        })
     })
   })
+
+  const recipes = filteredRecipes.length > 0 ? filteredRecipes : window.recipes
+  showFilteredTags(recipes, tags)
 
   // Si la recherche de l'utilisateur ne correspond à aucune des recettes
   if (filteredRecipes.length === 0) {
     recettesSection.innerHTML =
-            '<p id="noMatchingRecipes">  Aucune recette ne contient \'' + searchText + '\' vous pouvez chercher "tarte aux pommes", "poisson", etc.  </p>'
+      '<p id="noMatchingRecipes">  Aucune recette ne contient \'' + searchText + '\' vous pouvez chercher "tarte aux pommes", "poisson", etc.  </p>'
   } else {
     // générer le contenu HTML des recettes filtrées
     let filteredRecipesHTML = ''
@@ -253,4 +191,79 @@ function search (text, tags) {
   }
   // Mettre à jour le nombre total de recettes affichées dans l'élément prévu à cet effet
   updateRecipeCount()
+}
+
+function showFilteredTags (recipes, tags) {
+  // Remettre à jour les listes avec tous les ingrédients, ustensiles et appareils
+  for (let i = 0; i < recipes.length; i++) {
+    const recipe = recipes[i]
+    for (let j = 0; j < recipe.ingredients.length; j++) {
+      const ingredientName = recipe.ingredients[j].ingredient
+      if (!ingredientsListElementBox.querySelector(`[data-ingredient="${ingredientName}"]`)) {
+        const ingredientElement = document.createElement('div')
+        ingredientElement.dataset.ingredient = ingredientName
+        ingredientElement.textContent = ingredientName
+        if (tags.indexOf(ingredientElement.innerText) !== -1) {
+          const closeIcon = document.createElement('span')
+          closeIcon.setAttribute('class', 'fa-solid fa-xmark close-icon')
+          ingredientElement.appendChild(closeIcon)
+          // Gestionnaire d'événements pour la suppression de l'élément
+          closeIcon.addEventListener('click', function (event) {
+            removeTag(ingredientElement.innerText)
+            event.stopPropagation() // Empêche la propagation de l'événement aux autres gestionnaires d'événements
+          })
+          ingredientElement.setAttribute('class', 'listElementSelected')
+          ingredientsListElementBox.insertBefore(ingredientElement, ingredientsListElementBox.firstChild)
+        } else {
+          ingredientsListElementBox.appendChild(ingredientElement)
+        }
+      }
+    }
+
+    const applianceName = recipe.appliance
+    if (!appareilsListElementBox.querySelector(`[data-appliance="${applianceName}"]`)) {
+      const applianceElement = document.createElement('div')
+      applianceElement.dataset.appliance = applianceName
+      applianceElement.textContent = applianceName
+      appareilsListElementBox.appendChild(applianceElement)
+      if (tags.indexOf(applianceElement.innerText) !== -1) {
+        const closeIcon = document.createElement('span')
+        closeIcon.setAttribute('class', 'fa-solid fa-xmark close-icon')
+        applianceElement.appendChild(closeIcon)
+        // Gestionnaire d'événements pour la suppression de l'élément
+        closeIcon.addEventListener('click', function (event) {
+          removeTag(applianceElement.innerText)
+          event.stopPropagation() // Empêche la propagation de l'événement aux autres gestionnaires d'événements
+        })
+        applianceElement.setAttribute('class', 'listElementSelected')
+        appareilsListElementBox.insertBefore(applianceElement, appareilsListElementBox.firstChild)
+      } else {
+        appareilsListElementBox.appendChild(applianceElement)
+      }
+    }
+
+    for (let j = 0; j < recipe.ustensils.length; j++) {
+      const ustensil = recipe.ustensils[j]
+      if (!ustensilesListElementBox.querySelector(`[data-ustensil="${ustensil}"]`)) {
+        const ustensilElement = document.createElement('div')
+        ustensilElement.dataset.ustensil = ustensil
+        ustensilElement.textContent = ustensil
+        ustensilesListElementBox.appendChild(ustensilElement)
+        if (tags.indexOf(ustensilElement.innerText) !== -1) {
+          const closeIcon = document.createElement('span')
+          closeIcon.setAttribute('class', 'fa-solid fa-xmark close-icon')
+          ustensilElement.appendChild(closeIcon)
+          // Gestionnaire d'événements pour la suppression de l'élément
+          closeIcon.addEventListener('click', function (event) {
+            removeTag(ustensilElement.innerText)
+            event.stopPropagation() // Empêche la propagation de l'événement aux autres gestionnaires d'événements
+          })
+          ustensilElement.setAttribute('class', 'listElementSelected')
+          ustensilesListElementBox.insertBefore(ustensilElement, ustensilesListElementBox.firstChild)
+        } else {
+          ustensilesListElementBox.appendChild(ustensilElement)
+        }
+      }
+    }
+  }
 }
